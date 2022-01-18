@@ -1,0 +1,7 @@
+<div class="list">
+    <div class="mail" *ngFor="let mail of emails">
+        <h1>{{mail.title}}</h1>
+        <span>mail from {{mail.from}} to {{mail.to}} </span>
+        <span>{{mail.body}}</span>
+    </div>
+</div>

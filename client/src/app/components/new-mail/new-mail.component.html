@@ -1,0 +1,20 @@
+<form [formGroup]="myForm" (ngSubmit)="handlesubmit()">
+    <mat-form-field appearance="outline">
+        <mat-label>to</mat-label>
+        <input matInput placeholder="johnny789@****.com" formControlName="to">
+        <mat-icon matSuffix>face</mat-icon>
+        <mat-hint>fill the address mail</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="title.." formControlName="title">
+        <mat-hint>how do you feel today?</mat-hint>
+        <mat-error *ngIf="myForm.controls.title.errors?.required">password must be provided</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>body</mat-label>
+        <input matInput placeholder="body of the message" formControlName="body">
+        <mat-hint>teel me everything</mat-hint>
+    </mat-form-field>
+    <button mat-flat-button type="submit" color="primary" [disabled]="myForm.invalid">SEND</button>
+</form>

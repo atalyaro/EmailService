@@ -1,0 +1,19 @@
+<form [formGroup]="myForm" (ngSubmit)="handlesubmit()">
+    <mat-form-field appearance="outline">
+        <mat-label>user name</mat-label>
+        <input matInput placeholder="johnny789" formControlName="username">
+        <mat-icon matSuffix>face</mat-icon>
+        <mat-hint>Hint</mat-hint>
+        <mat-error *ngIf="myForm.controls.username.invalid">username must be provided</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>password</mat-label>
+        <input matInput placeholder="password" formControlName="password">
+        <mat-icon matSuffix>vpn_key</mat-icon>
+        <mat-hint>Hint</mat-hint>
+        <mat-error *ngIf="myForm.controls.password.errors?.required">password must be provided</mat-error>
+        <mat-error *ngIf="myForm.controls.password.errors?.minlength">password must be at least 4 charectes</mat-error>
+    </mat-form-field>
+    <button mat-flat-button type="submit" color="primary" [disabled]="myForm.invalid">LOGIN</button>
+    <p>Don't have an account yet? <a routerLink="/register">Register</a></p>
+</form>

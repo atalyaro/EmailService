@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+    <span>Gmail</span>
+    <span class="example-spacer"></span>
+    <button mat-flat-button color="accent" (click)="_user.logout()">
+        LOGOUT
+    </button>
+    <a mat-flat-button color="accent" routerLink="/main/inbox">inbox</a>
+    <a mat-flat-button color="accent" routerLink="/main/profile">profile</a>
+    <a mat-flat-button color="accent" routerLink="/main/sent">sent</a>
+    <a mat-flat-button color="accent" routerLink="/main/newmail">new-mail</a>
+</mat-toolbar>
+
+<h1>Hello {{_user.loggedUser.username}}</h1>
+
+<router-outlet></router-outlet>
